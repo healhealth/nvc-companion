@@ -1,0 +1,41 @@
+.mainHeader {
+  text-align: center;
+  height: 70px;
+}
+
+.mainHeader h1 {
+  font-size: 22px;
+  padding: 20px 10px;
+}
+
+.actionsMenu {
+  height: calc(100% - 70px);
+  display: flex;
+  flex-direction: column;
+}
+
+.actionsMenu > button {
+  height: 33.3333%;
+  border: 0;
+  color: var(--color5);
+  font-size: 28px;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.actionsMenu > button i {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.actionsMenu > button:nth-child(1) {
+  background-color: var(--color1);
+}
+
+.actionsMenu > button:nth-child(2) {
+  background-color: var(--color2);
+}
+
+.actionsMenu > button:nth-child(3) {
+  background-color: var(--color3);
+}

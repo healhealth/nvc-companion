@@ -4,4 +4,5 @@ const actions = {
   expressGratitude: 'expressGratitude'
 }
 
+// eslint-disable-next-line import/prefer-default-export
 export {actions}

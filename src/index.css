@@ -6,8 +6,20 @@
   box-sizing: border-box;
 }
 
+html {
+  --color1: hsl(213, 10%, 49%);
+  --color2: #a58d92;
+  --color3: #78a186;
+  --color4: hsl(130, 46%, 81%);
+  --color5: hsl(120, 39%, 93%);
+}
+
 body {
   font-family: 'Muli', sans-serif;
-  background-color: hsl(0, 0%, 90%);
-  color: hsl(0, 0%, 10%);
+  background-color: var(--color5);
+  color: var(--color1);
+}
+
+html, body, #root {
+  height: 100%;
 }
