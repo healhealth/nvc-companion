@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Communicate from 'components/communicate/communicate.container'
+import Communicate from 'components/app/communicate/communicate'
 
 const App = () => (
   <div className='app'>
