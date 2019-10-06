@@ -11,10 +11,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "lint": "node ./node_modules/eslint/bin/eslint.js src/",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "@agillic/eslint-config"
+    ]
   },
   "browserslist": {
     "production": [
@@ -27,5 +31,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@agillic/eslint-config": "0.0.5",
+    "eslint": "^6.5.1"
   }
 }
