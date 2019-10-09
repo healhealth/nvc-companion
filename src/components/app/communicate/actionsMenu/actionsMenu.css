@@ -14,28 +14,32 @@
   flex-direction: column;
 }
 
-.actionsMenu > button {
+.actionsMenuItem {
   height: 33.3333%;
-  border: 0;
-  color: var(--color5);
   font-size: 28px;
   font-weight: 700;
   font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color5);
 }
 
-.actionsMenu > button i {
+.actionsMenuItem i {
   font-size: 50px;
   margin-bottom: 10px;
 }
 
-.actionsMenu > button:nth-child(1) {
+.actionsMenuItem:nth-child(1) {
   background-color: var(--color1);
 }
 
-.actionsMenu > button:nth-child(2) {
+.actionsMenuItem:nth-child(2) {
   background-color: var(--color2);
 }
 
-.actionsMenu > button:nth-child(3) {
+.actionsMenuItem:nth-child(3) {
   background-color: var(--color3);
 }

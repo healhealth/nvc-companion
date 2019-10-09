@@ -10,19 +10,28 @@ const ActionsMenu = () => (
       <h1>What would you like to do?</h1>
     </header>
     <nav className='actionsMenu'>
-      <Link to='make-a-request'>
+      <Link
+        to='make-a-request'
+        className='actionsMenuItem'
+      >
         <div>
           <i className='fas fa-praying-hands' />
         </div>
         Make a request
       </Link>
-      <Link to='offer-empathy'>
+      <Link
+        to='offer-empathy'
+        className='actionsMenuItem'
+      >
         <div>
           <i className='fas fa-hand-holding-heart' />
         </div>
         Offer empathy
       </Link>
-      <Link to='express-gratitude'>
+      <Link
+        to='express-gratitude'
+        className='actionsMenuItem'
+      >
         <div>
           <i className='fas fa-medal' />
         </div>
