@@ -4,7 +4,7 @@ import {Link} from '@reach/router'
 const ExpressGratitude = () => (
   <>
     <h1>Express gratitude</h1>
-    <Link to='/communicate'>
+    <Link to='../'>
       Go back
     </Link>
   </>

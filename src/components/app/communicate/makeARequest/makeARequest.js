@@ -13,7 +13,7 @@ const MakeARequest = () => {
   return (
     <>
       <h1>Make a request</h1>
-      <Link to='/communicate'>
+      <Link to='../'>
         Go back
       </Link>
 
