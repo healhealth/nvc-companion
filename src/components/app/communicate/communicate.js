@@ -1,50 +1,18 @@
-/* eslint-disable sonarjs/no-duplicate-string */
-import React, {useState} from 'react'
+import React from 'react'
+import {Router} from '@reach/router'
 
 import MakeARequest from './makeARequest/makeARequest'
+import ExpressGratitude from './expressGratitude/expressGratitude'
+import OfferEmpathy from './offerEmpathy/offerEmpathy'
 import ActionsMenu from './actionsMenu/actionsMenu'
-import {actions} from './communicate.enum'
 
-const Communicate = () => {
-  const [selectedModule, selectModule] = useState(null)
-  return (
-    <>
-      {(selectedModule === actions.makeARequest) && (
-        <MakeARequest
-          onBack={() => selectModule(null)}
-        />
-      )}
-      {(selectedModule === actions.offerEmpathy) && (
-        <>
-          <h1>Offer empathy</h1>
-          <button
-            type='button'
-            onClick={() => selectModule(null)}
-          >
-            Go back
-          </button>
-        </>
-      )}
-      {(selectedModule === actions.expressGratitude) && (
-        <>
-          <h1>Express gratitude</h1>
-          <button
-            type='button'
-            onClick={() => selectModule(null)}
-          >
-            Go back
-          </button>
-        </>
-      )}
-      {(selectedModule === null) && (
-        <ActionsMenu
-          selectModule={selectModule}
-        />
-      )}
-    </>
-  )
-}
+const Communicate = () => (
+  <Router className='fullHeightRouter'>
+    <ActionsMenu default />
+    <MakeARequest path='make-a-request' />
+    <ExpressGratitude path='express-gratitude' />
+    <OfferEmpathy path='offer-empathy' />
+  </Router>
+)
 
 export default Communicate
-
-export {actions}

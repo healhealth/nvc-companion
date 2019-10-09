@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {func} from 'prop-types'
+import {Link} from '@reach/router'
 
 const steps = {
   observation: 'observation',
@@ -8,17 +8,14 @@ const steps = {
   request: 'request'
 }
 
-const MakeARequest = ({onBack}) => {
+const MakeARequest = () => {
   const [currentStep, setStep] = useState(steps.observation)
   return (
     <>
       <h1>Make a request</h1>
-      <button
-        type='button'
-        onClick={onBack}
-      >
+      <Link to='../'>
         Go back
-      </button>
+      </Link>
 
       {(currentStep === steps.observation) && (
         <>
@@ -94,10 +91,6 @@ const MakeARequest = ({onBack}) => {
       )}
     </>
   )
-}
-
-MakeARequest.propTypes = {
-  onBack: func
 }
 
 export default MakeARequest
