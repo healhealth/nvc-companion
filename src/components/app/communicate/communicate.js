@@ -7,7 +7,7 @@ import OfferEmpathy from './offerEmpathy/offerEmpathy'
 import ActionsMenu from './actionsMenu/actionsMenu'
 
 const Communicate = () => (
-  <Router>
+  <Router className='fullHeightRouter'>
     <ActionsMenu default />
     <MakeARequest path='make-a-request' />
     <ExpressGratitude path='express-gratitude' />

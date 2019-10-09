@@ -7,7 +7,7 @@ import './app.css'
 
 const App = () => (
   <div className='app'>
-    <Router>
+    <Router className='fullHeightRouter'>
       <Communicate path='communicate/*' />
     </Router>
   </div>
