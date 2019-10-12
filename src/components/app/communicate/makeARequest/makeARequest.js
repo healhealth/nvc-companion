@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {Link} from '@reach/router'
 
+import MainHeader from 'components/mainHeader/mainHeader'
+
 import './makeARequest.css'
 
 const steps = {
@@ -14,9 +16,9 @@ const MakeARequest = () => {
   const [currentStep, setStep] = useState(steps.observation)
   return (
     <>
-      <header className='mainHeader'>
-        <h1>Make a request</h1>
-      </header>
+      <MainHeader
+        heading='Make a request'
+      />
       <div className='makeARequest'>
         <Link to='../'>
           Go back

@@ -1,0 +1,13 @@
+html {
+  --main-header-height: 70px;
+}
+
+.mainHeader {
+  text-align: center;
+  height: var(--main-header-height);
+}
+
+.mainHeader h1 {
+  font-size: 22px;
+  padding: 20px 10px;
+}

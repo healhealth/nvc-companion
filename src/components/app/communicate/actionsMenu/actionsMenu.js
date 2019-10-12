@@ -2,13 +2,15 @@
 import React from 'react'
 import {Link} from '@reach/router'
 
+import MainHeader from 'components/mainHeader/mainHeader'
+
 import './actionsMenu.css'
 
 const ActionsMenu = () => (
   <>
-    <header className='mainHeader'>
-      <h1>What would you like to do?</h1>
-    </header>
+    <MainHeader
+      heading='What would you like to do?'
+    />
     <nav className='actionsMenu'>
       <Link
         to='make-a-request'
