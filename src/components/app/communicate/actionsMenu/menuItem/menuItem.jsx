@@ -19,7 +19,7 @@ const MenuItem = ({to, icon, children}) => (
 MenuItem.propTypes = {
   to: string.isRequired,
   icon: string.isRequired,
-  children: node
+  children: node.isRequired
 }
 
 export default MenuItem
