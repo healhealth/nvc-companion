@@ -8,7 +8,8 @@ import './app.css'
 const App = () => (
   <div className='app'>
     <Router className='fullHeightRouter'>
-      <Communicate path='communicate/*' />
+      <Communicate default />
+      {/* <Communicate path='communicate/*' /> */}
     </Router>
   </div>
 )
