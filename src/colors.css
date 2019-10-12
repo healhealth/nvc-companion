@@ -1,3 +1,5 @@
+/* stylelint-disable custom-property-empty-line-before */
+
 html {
   --hue-wheat: 36;
   --color-wheat: hsl(var(--hue-wheat), 82%, 83%);
@@ -21,3 +23,5 @@ html {
   --color-white: hsl(var(--hue-gray), 100%, 98%);
   --color-black: hsl(var(--hue-gray), 2%, 24%);
 }
+
+/* stylelint-enable custom-property-empty-line-before */
