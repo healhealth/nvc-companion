@@ -1,8 +1,7 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 import React from 'react'
-import {Link} from '@reach/router'
 
 import MainHeader from 'components/mainHeader/mainHeader'
+import MenuItem from './menuItem/menuItem'
 
 import './actionsMenu.css'
 
@@ -12,33 +11,25 @@ const ActionsMenu = () => (
       heading='What would you like to do?'
     />
     <nav className='actionsMenu'>
-      <Link
+      <MenuItem
         to='make-a-request'
-        className='actionsMenuItem'
+        icon='fas fa-praying-hands'
       >
-        <div>
-          <i className='fas fa-praying-hands' />
-        </div>
         Make a request
-      </Link>
-      <Link
+      </MenuItem>
+
+      <MenuItem
         to='offer-empathy'
-        className='actionsMenuItem'
+        icon='fas fa-hand-holding-heart'
       >
-        <div>
-          <i className='fas fa-hand-holding-heart' />
-        </div>
         Offer empathy
-      </Link>
-      <Link
+      </MenuItem>
+      <MenuItem
         to='express-gratitude'
-        className='actionsMenuItem'
+        icon='fas fa-medal'
       >
-        <div>
-          <i className='fas fa-medal' />
-        </div>
         Express gratitude
-      </Link>
+      </MenuItem>
     </nav>
   </>
 )
