@@ -6,7 +6,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "node ./node_modules/eslint/bin/eslint.js src/",
+    "eslint": "node ./node_modules/eslint/bin/eslint.js src/",
+    "stylelint": "./node_modules/stylelint/bin/stylelint.js \"src/**/*.css\"",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -18,7 +19,8 @@
   },
   "devDependencies": {
     "@agillic/eslint-config": "0.0.5",
-    "eslint": "^6.5.1"
+    "eslint": "^6.5.1",
+    "stylelint": "^11.1.1"
   },
   "browserslist": {
     "production": [
