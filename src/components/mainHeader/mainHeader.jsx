@@ -1,16 +1,16 @@
 import React from 'react'
-import {string} from 'prop-types'
+import {node} from 'prop-types'
 
 import './mainHeader.css'
 
-const MainHeader = ({heading}) => (
+const MainHeader = ({children}) => (
   <header className='mainHeader'>
-    <h1>{heading}</h1>
+    <h1>{children}</h1>
   </header>
 )
 
 MainHeader.propTypes = {
-  heading: string.isRequired
+  children: node.isRequired
 }
 
 export default MainHeader

@@ -22,9 +22,9 @@ const MakeARequest = () => {
   const [currentStep, setStep] = useState(steps.observation)
   return (
     <>
-      <MainHeader
-        heading={getStepTitle({step: currentStep})}
-      />
+      <MainHeader>
+        {getStepTitle({step: currentStep})}
+      </MainHeader>
       <div className='makeARequest'>
         {(currentStep === steps.observation) && (
           <>

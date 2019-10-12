@@ -7,9 +7,9 @@ import './actionsMenu.css'
 
 const ActionsMenu = () => (
   <>
-    <MainHeader
-      heading='What would you like to do?'
-    />
+    <MainHeader>
+      What would you like to do?
+    </MainHeader>
     <nav className='actionsMenu'>
       <MenuItem
         to='make-a-request'
