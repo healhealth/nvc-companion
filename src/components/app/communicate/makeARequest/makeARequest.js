@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import {Link} from '@reach/router'
 
 import MainHeader from 'components/mainHeader/mainHeader'
 
@@ -27,9 +26,6 @@ const MakeARequest = () => {
         heading={getStepTitle({step: currentStep})}
       />
       <div className='makeARequest'>
-        <Link to='../'>
-          Go back
-        </Link>
         {(currentStep === steps.observation) && (
           <>
             <p>When I [see|hear|remember|imagine|add your own] __,</p>
