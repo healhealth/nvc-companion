@@ -15,6 +15,18 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+### `npm run eslint`
+
+Runs eslint. Read more about [how to integrate it with your editor](https://eslint.org/docs/user-guide/integrations).
+
+### `npm run stylelint`
+
+Runs stylelint. Read more about [how to integrate it with your editor](https://github.com/stylelint/stylelint/blob/master/docs/user-guide/complementary-tools.md#editor-plugins).
+
+### `npm run lint`
+
+Run both eslint and stylelint sequentially.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
