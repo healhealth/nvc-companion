@@ -17,7 +17,6 @@ const ActionsMenu = () => (
       >
         Make a request
       </MenuItem>
-
       <MenuItem
         to='offer-empathy'
         icon='fas fa-hand-holding-heart'
