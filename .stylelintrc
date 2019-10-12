@@ -111,7 +111,6 @@
     "shorthand-property-no-redundant-values": true,
     "string-no-newline": true,
     "string-quotes": "single",
-    "unicode-bom": "never",
     "unit-blacklist": ["px", "pt", "cm", "mm", "in", "Q"],
     "unit-case": "lower",
     "unit-no-unknown": true,
