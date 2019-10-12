@@ -7,7 +7,10 @@
 }
 
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: Muli, sans-serif;
+  /* stylelint-disable unit-blacklist */
+  font-size: 16px;
+  /* stylelint-enable unit-blacklist */
   background-color: var(--color-white);
   color: var(--color-black);
 }

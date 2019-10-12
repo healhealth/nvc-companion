@@ -5,7 +5,9 @@ import './mainHeader.css'
 
 const MainHeader = ({children}) => (
   <header className='mainHeader'>
-    <h1>{children}</h1>
+    <div className='mainHeaderHeadingOuterWrapper'>
+      <h1>{children}</h1>
+    </div>
   </header>
 )
 

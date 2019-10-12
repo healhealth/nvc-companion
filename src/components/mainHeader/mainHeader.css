@@ -1,5 +1,5 @@
 html {
-  --main-header-height: 70px;
+  --main-header-height: 4rem;
 }
 
 .mainHeader {
@@ -7,7 +7,15 @@ html {
   height: var(--main-header-height);
 }
 
-.mainHeader h1 {
-  font-size: 22px;
-  padding: 20px 10px;
+.mainHeaderHeadingOuterWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainHeaderHeadingOuterWrapper h1 {
+  font-size: 1.5rem;
+  padding: 0 0.5rem;
 }

@@ -1,6 +1,6 @@
 .actionsMenuItem {
   height: 33.3333%;
-  font-size: 28px;
+  font-size: 2rem;
   font-weight: 700;
   font-family: inherit;
   display: flex;
@@ -12,8 +12,8 @@
 }
 
 .actionsMenuItem i {
-  font-size: 50px;
-  margin-bottom: 10px;
+  font-size: 4rem;
+  margin-bottom: 1rem;
 }
 
 .actionsMenuItem:nth-child(1) {
