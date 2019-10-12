@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: var(--color5);
+  color: inherit;
 }
 
 .actionsMenuItem i {
@@ -33,13 +33,13 @@
 }
 
 .actionsMenuItem:nth-child(1) {
-  background-color: var(--color1);
+  background-color: var(--color-wheat);
 }
 
 .actionsMenuItem:nth-child(2) {
-  background-color: var(--color2);
+  background-color: var(--color-mint);
 }
 
 .actionsMenuItem:nth-child(3) {
-  background-color: var(--color3);
+  background-color: var(--color-linen);
 }

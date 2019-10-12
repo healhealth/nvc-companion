@@ -1,0 +1,23 @@
+html {
+  --hue-wheat: 36;
+  --color-wheat: hsl(var(--hue-wheat), 82%, 83%);
+
+  --hue-dust: 29;
+  --color-dust: hsl(var(--hue-dust), 25%, 68%);
+
+  --hue-sand: 23;
+  --color-sand: hsl(var(--hue-sand), 23%, 58%);
+
+  --hue-chill: 167;
+  --color-chill: hsl(var(--hue-chill), 13%, 71%);
+
+  --hue-mint: 88;
+  --color-mint: hsl(var(--hue-mint), 16%, 81%);
+
+  --hue-linen: 37;
+  --color-linen: hsl(var(--hue-linen), 27%, 85%);
+
+  --hue-gray: 210;
+  --color-white: hsl(var(--hue-gray), 100%, 98%);
+  --color-black: hsl(var(--hue-gray), 2%, 24%);
+}
