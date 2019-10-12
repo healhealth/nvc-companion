@@ -12,12 +12,19 @@ const steps = {
   request: 'request'
 }
 
+const getStepTitle = ({step}) => ({
+  observation: '1. Make an observation',
+  feeling: '2. Identify your feeling',
+  need: '3. Identify your need',
+  request: '4. Formulate a request'
+})[step]
+
 const MakeARequest = () => {
   const [currentStep, setStep] = useState(steps.observation)
   return (
     <>
       <MainHeader
-        heading='Make a request'
+        heading={getStepTitle({step: currentStep})}
       />
       <div className='makeARequest'>
         <Link to='../'>
@@ -25,7 +32,6 @@ const MakeARequest = () => {
         </Link>
         {(currentStep === steps.observation) && (
           <>
-            <h2>Make an observation</h2>
             <p>When I [see|hear|remember|imagine|add your own] __,</p>
             <ul>
               <li>Is it factual?</li>
@@ -43,7 +49,6 @@ const MakeARequest = () => {
 
         {(currentStep === steps.feeling) && (
           <>
-            <h2>Identify the feeling</h2>
             <p>I feel [list of emotions|add your own],</p>
             <ul>
               <li>Is it a feeling rather than a thought?</li>
@@ -60,7 +65,6 @@ const MakeARequest = () => {
 
         {(currentStep === steps.need) && (
           <>
-            <h2>Identify the need</h2>
             <p>Because my need for [list of needs|add your own] is not met.</p>
             <ul>
               <li>Is it a really a need?</li>
@@ -77,7 +81,6 @@ const MakeARequest = () => {
 
         {(currentStep === steps.request) && (
           <>
-            <h2>Make a request</h2>
             <p>Would you be willing to __ so __?</p>
             <ul>
               <li>Is this a request rather than a demand?</li>
@@ -92,7 +95,6 @@ const MakeARequest = () => {
             >
               Finish
             </button>
-
           </>
         )}
       </div>
