@@ -40,13 +40,14 @@ const MakeARequest = () => {
             }
           >
             <p>When I [see|hear|remember|imagine|add your own] __,</p>
-            <button
-              type='button'
-              onClick={() => setStep(feeling)}
-              disabled={currentStep !== observation}
-            >
-              Next
-            </button>
+            {(currentStep === observation) && (
+              <button
+                type='button'
+                onClick={() => setStep(feeling)}
+              >
+                Next
+              </button>
+            )}
           </div>
           <div
             className={
@@ -58,13 +59,14 @@ const MakeARequest = () => {
             }
           >
             <p>I feel [list of emotions|add your own],</p>
+            {(currentStep === feeling) && (
             <button
               type='button'
               onClick={() => setStep(need)}
-              disabled={currentStep !== feeling}
             >
               Next
             </button>
+            )}
           </div>
           <div
             className={
@@ -76,13 +78,14 @@ const MakeARequest = () => {
             }
           >
             <p>Because my need for [list of needs|add your own] is not met.</p>
-            <button
-              type='button'
-              onClick={() => setStep(request)}
-              disabled={currentStep !== need}
-            >
-              Next
-            </button>
+            {(currentStep === need) && (
+              <button
+                type='button'
+                onClick={() => setStep(request)}
+              >
+                Next
+              </button>
+            )}
           </div>
           <div
             className={
@@ -93,15 +96,16 @@ const MakeARequest = () => {
             }
           >
             <p>Would you be willing to __ so __?</p>
-            <button
-              type='button'
-              onClick={() => {
-                console.log('Nice job')
-              }}
-              disabled={currentStep !== request}
-            >
-              Finish
-            </button>
+            {(currentStep === request) && (
+              <button
+                type='button'
+                onClick={() => {
+                  console.log('Nice job')
+                }}
+              >
+                Finish
+              </button>
+            )}
           </div>
         </div>
       </div>
