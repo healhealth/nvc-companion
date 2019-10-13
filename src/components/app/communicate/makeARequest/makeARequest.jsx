@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import classNames from 'classnames'
 
 import MainHeader from 'components/mainHeader/mainHeader'
 
@@ -11,6 +12,9 @@ const steps = {
   request: 'request'
 }
 
+
+const {observation, feeling, need, request} = steps
+
 const getStepTitle = ({step}) => ({
   observation: '1. Make an observation',
   feeling: '2. Identify your feeling',
@@ -19,80 +23,118 @@ const getStepTitle = ({step}) => ({
 })[step]
 
 const MakeARequest = () => {
-  const [currentStep, setStep] = useState(steps.observation)
+  const [currentStep, setStep] = useState(observation)
   return (
     <>
       <MainHeader>
         {getStepTitle({step: currentStep})}
       </MainHeader>
       <div className='makeARequest'>
-        {(currentStep === steps.observation) && (
-          <>
-            <p>When I [see|hear|remember|imagine|add your own] __,</p>
-            <ul>
-              <li>Is it factual?</li>
-              <li>Is it specific?</li>
-              <li>Is it free of judgement?</li>
-            </ul>
-            <button
-              type='button'
-              onClick={() => setStep(steps.feeling)}
-            >
-              Next
-            </button>
-          </>
-        )}
-
-        {(currentStep === steps.feeling) && (
-          <>
-            <p>I feel [list of emotions|add your own],</p>
-            <ul>
-              <li>Is it a feeling rather than a thought?</li>
-              <li>Is this really the feeling which was stimulated?</li>
-            </ul>
-            <button
-              type='button'
-              onClick={() => setStep(steps.need)}
-            >
-              Next
-            </button>
-          </>
-        )}
-
-        {(currentStep === steps.need) && (
-          <>
-            <p>Because my need for [list of needs|add your own] is not met.</p>
-            <ul>
-              <li>Is it a really a need?</li>
-              <li>Is this really the need behind the feeling?</li>
-            </ul>
-            <button
-              type='button'
-              onClick={() => setStep(steps.request)}
-            >
-              Next
-            </button>
-          </>
-        )}
-
-        {(currentStep === steps.request) && (
-          <>
-            <p>Would you be willing to __ so __?</p>
-            <ul>
-              <li>Is this a request rather than a demand?</li>
-              <li>Is it specific?</li>
-              <li>Would the thing that I am requesting enrich my life?</li>
-            </ul>
-            <button
-              type='button'
-              onClick={() => {
-                console.log('Nice job')
-              }}
-            >
-              Finish
-            </button>
-          </>
-        )}
+        <div className='steps'>
+          <div
+            className={
+              classNames('step', {
+                current: currentStep === observation,
+                done: currentStep !== observation
+              })
+            }
+          >
+            <p>When I hear you addressing me like that,</p>
+            {(currentStep === observation) && (
+              <button
+                type='button'
+                onClick={() => setStep(feeling)}
+              >
+                Next
+              </button>
+            )}
+            {(currentStep !== observation) && (
+              <button
+                className='selectStep'
+                type='button'
+                onClick={() => setStep(observation)}
+              >
+                Go back to making an observation
+              </button>
+            )}
+          </div>
+          <div
+            className={
+              classNames('step', {
+                current: currentStep === feeling,
+                done: ![observation, feeling].includes(currentStep),
+                upcoming: currentStep === observation
+              })
+            }
+          >
+            <p>I feel agitated,</p>
+            {(currentStep === feeling) && (
+              <button
+                type='button'
+                onClick={() => setStep(need)}
+              >
+                Next
+              </button>
+            )}
+            {![observation, feeling].includes(currentStep) && (
+              <button
+                className='selectStep'
+                type='button'
+                onClick={() => setStep(feeling)}
+              >
+                Go back to Identifying the feeling
+              </button>
+            )}
+          </div>
+          <div
+            className={
+              classNames('step', {
+                current: currentStep === need,
+                done: ![observation, feeling, need].includes(currentStep),
+                upcoming: [observation, feeling].includes(currentStep)
+              })
+            }
+          >
+            <p> because my need for cooperation is not being met.</p>
+            {(currentStep === need) && (
+              <button
+                type='button'
+                onClick={() => setStep(request)}
+              >
+                Next
+              </button>
+            )}
+            {![observation, feeling, need].includes(currentStep) && (
+              <button
+                className='selectStep'
+                type='button'
+                onClick={() => setStep(need)}
+              >
+                Go back to identifying the need
+              </button>
+            )}
+          </div>
+          <div
+            className={
+              classNames('step', {
+                current: currentStep === request,
+                upcoming: currentStep !== request
+              })
+            }
+          >
+            <p>Would you be willing to tell me what you are feeling and needing right now instead of what you think I am, so we can come to a peaceful resolution of our differences?</p>
+            {(currentStep === request) && (
+              <button
+                type='button'
+                onClick={() => {
+                  console.log('Nice job')
+                }}
+              >
+                Finish
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     </>
   )
