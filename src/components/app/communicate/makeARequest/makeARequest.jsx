@@ -29,11 +29,6 @@ const MakeARequest = () => {
         {(currentStep === steps.observation) && (
           <>
             <p>When I [see|hear|remember|imagine|add your own] __,</p>
-            <ul>
-              <li>Is it factual?</li>
-              <li>Is it specific?</li>
-              <li>Is it free of judgement?</li>
-            </ul>
             <button
               type='button'
               onClick={() => setStep(steps.feeling)}
@@ -46,10 +41,6 @@ const MakeARequest = () => {
         {(currentStep === steps.feeling) && (
           <>
             <p>I feel [list of emotions|add your own],</p>
-            <ul>
-              <li>Is it a feeling rather than a thought?</li>
-              <li>Is this really the feeling which was stimulated?</li>
-            </ul>
             <button
               type='button'
               onClick={() => setStep(steps.need)}
@@ -62,10 +53,6 @@ const MakeARequest = () => {
         {(currentStep === steps.need) && (
           <>
             <p>Because my need for [list of needs|add your own] is not met.</p>
-            <ul>
-              <li>Is it a really a need?</li>
-              <li>Is this really the need behind the feeling?</li>
-            </ul>
             <button
               type='button'
               onClick={() => setStep(steps.request)}
@@ -78,11 +65,6 @@ const MakeARequest = () => {
         {(currentStep === steps.request) && (
           <>
             <p>Would you be willing to __ so __?</p>
-            <ul>
-              <li>Is this a request rather than a demand?</li>
-              <li>Is it specific?</li>
-              <li>Would the thing that I am requesting enrich my life?</li>
-            </ul>
             <button
               type='button'
               onClick={() => {
