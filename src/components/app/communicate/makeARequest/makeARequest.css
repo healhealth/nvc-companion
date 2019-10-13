@@ -1,4 +1,69 @@
 .makeARequest {
-  background-color: var(--color-wheat);
   height: calc(100% - var(--main-header-height));
+}
+
+.makeARequest .steps {
+  height: 100%;
+  overflow: hidden;
+}
+
+.makeARequest .steps .step {
+  transition: height 0.5s, font-size 0.5s;
+  text-align: center;
+}
+
+.makeARequest .steps .step.current,
+.makeARequest .steps .step.upcoming {
+  font-size: 3rem;
+}
+
+.makeARequest .steps .step.done {
+  font-size: 1rem;
+}
+
+.makeARequest .steps .step:nth-child(1) {
+  background-color: var(--color-wheat);
+}
+
+.makeARequest .steps .step:nth-child(1).current {
+  height: 100%;
+}
+
+.makeARequest .steps .step:nth-child(1).done {
+  height: 4rem;
+}
+
+.makeARequest .steps .step:nth-child(2) {
+  background-color: var(--color-mint);
+}
+
+.makeARequest .steps .step:nth-child(2).current,
+.makeARequest .steps .step:nth-child(2).upcoming {
+  height: calc(100% - 4rem);
+}
+
+.makeARequest .steps .step:nth-child(2).done {
+  height: 4rem;
+}
+
+.makeARequest .steps .step:nth-child(3) {
+  background-color: var(--color-linen);
+}
+
+.makeARequest .steps .step:nth-child(3).current,
+.makeARequest .steps .step:nth-child(3).upcoming {
+  height: calc(100% - 4rem - 4rem);
+}
+
+.makeARequest .steps .step:nth-child(3).done {
+  height: 4rem;
+}
+
+.makeARequest .steps .step:nth-child(4) {
+  background-color: var(--color-chill);
+}
+
+.makeARequest .steps .step:nth-child(4).current,
+.makeARequest .steps .step:nth-child(4).upcoming {
+  height: calc(100% - 4rem - 4rem - 4rem);
 }
