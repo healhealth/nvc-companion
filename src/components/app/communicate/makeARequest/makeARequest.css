@@ -14,7 +14,7 @@
 
 .makeARequest .steps .step.current,
 .makeARequest .steps .step.upcoming {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .makeARequest .steps .step.done {

@@ -39,7 +39,7 @@ const MakeARequest = () => {
               })
             }
           >
-            <p>When I [see|hear|remember|imagine|add your own] __,</p>
+            <p>When I hear you addressing me like that,</p>
             {(currentStep === observation) && (
               <button
                 type='button'
@@ -58,7 +58,7 @@ const MakeARequest = () => {
               })
             }
           >
-            <p>I feel [list of emotions|add your own],</p>
+            <p>I feel agitated,</p>
             {(currentStep === feeling) && (
             <button
               type='button'
@@ -77,7 +77,7 @@ const MakeARequest = () => {
               })
             }
           >
-            <p>Because my need for [list of needs|add your own] is not met.</p>
+            <p> because my need for cooperation is not being met.</p>
             {(currentStep === need) && (
               <button
                 type='button'
@@ -95,7 +95,7 @@ const MakeARequest = () => {
               })
             }
           >
-            <p>Would you be willing to __ so __?</p>
+            <p>Would you be willing to tell me what you are feeling and needing right now instead of what you think I am, so we can come to a peaceful resolution of our differences?</p>
             {(currentStep === request) && (
               <button
                 type='button'
