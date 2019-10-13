@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import classNames from 'classnames'
 
 import MainHeader from 'components/mainHeader/mainHeader'
 
@@ -11,6 +12,9 @@ const steps = {
   request: 'request'
 }
 
+
+const {observation, feeling, need, request} = steps
+
 const getStepTitle = ({step}) => ({
   observation: '1. Make an observation',
   feeling: '2. Identify your feeling',
@@ -19,62 +23,85 @@ const getStepTitle = ({step}) => ({
 })[step]
 
 const MakeARequest = () => {
-  const [currentStep, setStep] = useState(steps.observation)
+  const [currentStep, setStep] = useState(observation)
   return (
     <>
       <MainHeader>
         {getStepTitle({step: currentStep})}
       </MainHeader>
       <div className='makeARequest'>
-        {(currentStep === steps.observation) && (
-          <>
-            <p>When I [see|hear|remember|imagine|add your own] __,</p>
-            <button
-              type='button'
-              onClick={() => setStep(steps.feeling)}
-            >
-              Next
-            </button>
-          </>
-        )}
-
-        {(currentStep === steps.feeling) && (
-          <>
-            <p>I feel [list of emotions|add your own],</p>
-            <button
-              type='button'
-              onClick={() => setStep(steps.need)}
-            >
-              Next
-            </button>
-          </>
-        )}
-
-        {(currentStep === steps.need) && (
-          <>
-            <p>Because my need for [list of needs|add your own] is not met.</p>
-            <button
-              type='button'
-              onClick={() => setStep(steps.request)}
-            >
-              Next
-            </button>
-          </>
-        )}
-
-        {(currentStep === steps.request) && (
-          <>
-            <p>Would you be willing to __ so __?</p>
-            <button
-              type='button'
-              onClick={() => {
-                console.log('Nice job')
-              }}
-            >
-              Finish
-            </button>
-          </>
-        )}
+        <div
+          className={
+            classNames({
+              current: currentStep === observation,
+              done: currentStep !== observation
+            })
+          }
+        >
+          <p>When I [see|hear|remember|imagine|add your own] __,</p>
+          <button
+            type='button'
+            onClick={() => setStep(feeling)}
+            disabled={currentStep !== observation}
+          >
+            Next
+          </button>
+        </div>
+        <div
+          className={
+            classNames({
+              current: currentStep === feeling,
+              done: ![observation, feeling].includes(currentStep),
+              upcoming: currentStep === observation
+            })
+          }
+        >
+          <p>I feel [list of emotions|add your own],</p>
+          <button
+            type='button'
+            onClick={() => setStep(need)}
+            disabled={currentStep !== feeling}
+          >
+            Next
+          </button>
+        </div>
+        <div
+          className={
+            classNames({
+              current: currentStep === need,
+              done: ![observation, feeling, need].includes(currentStep),
+              upcoming: [observation, feeling].includes(currentStep)
+            })
+          }
+        >
+          <p>Because my need for [list of needs|add your own] is not met.</p>
+          <button
+            type='button'
+            onClick={() => setStep(request)}
+            disabled={currentStep !== need}
+          >
+            Next
+          </button>
+        </div>
+        <div
+          className={
+            classNames({
+              current: currentStep === request,
+              upcoming: currentStep !== request
+            })
+          }
+        >
+          <p>Would you be willing to __ so __?</p>
+          <button
+            type='button'
+            onClick={() => {
+              console.log('Nice job')
+            }}
+            disabled={currentStep !== request}
+          >
+            Finish
+          </button>
+        </div>
       </div>
     </>
   )
