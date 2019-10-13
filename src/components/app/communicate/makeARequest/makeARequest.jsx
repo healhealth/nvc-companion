@@ -48,6 +48,15 @@ const MakeARequest = () => {
                 Next
               </button>
             )}
+            {(currentStep !== observation) && (
+              <button
+                className='selectStep'
+                type='button'
+                onClick={() => setStep(observation)}
+              >
+                Go back to making an observation
+              </button>
+            )}
           </div>
           <div
             className={
@@ -60,12 +69,21 @@ const MakeARequest = () => {
           >
             <p>I feel agitated,</p>
             {(currentStep === feeling) && (
-            <button
-              type='button'
-              onClick={() => setStep(need)}
-            >
-              Next
-            </button>
+              <button
+                type='button'
+                onClick={() => setStep(need)}
+              >
+                Next
+              </button>
+            )}
+            {![observation, feeling].includes(currentStep) && (
+              <button
+                className='selectStep'
+                type='button'
+                onClick={() => setStep(feeling)}
+              >
+                Go back to Identifying the feeling
+              </button>
             )}
           </div>
           <div
@@ -84,6 +102,15 @@ const MakeARequest = () => {
                 onClick={() => setStep(request)}
               >
                 Next
+              </button>
+            )}
+            {![observation, feeling, need].includes(currentStep) && (
+              <button
+                className='selectStep'
+                type='button'
+                onClick={() => setStep(need)}
+              >
+                Go back to identifying the need
               </button>
             )}
           </div>
